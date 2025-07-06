@@ -1786,3 +1786,41 @@ span{
     display: none;
   }
 }
+
+
+
+
+.promos{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.promos h2{
+  font-family: var(--font-cursive);
+  font-weight: 500;
+  color: #ff9500;
+}
+
+.promos ul{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  margin-top: 2%;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+
+#meal-name{
+  font-size: 32px;
+  font-family: var(--font-helvetica);
+  color: #ff9500;
+}
+#pop{
+  font-size: 20px;
+  margin-top: 20px;
+
+
+}

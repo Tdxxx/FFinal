@@ -79,3 +79,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+const xhr = new XMLHttpRequest();
+xhr.open(
+  "GET",
+  "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood",
+  true
+);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    const data = JSON.parse(xhr.responseText);
+    const meal = data.meals[2];
+    document.getElementById("meal-name").textContent = meal.strMeal;
+    document.getElementById("meal-img").src = meal.strMealThumb;
+    document.getElementById("meal-img").alt = meal.strMeal;
+  }
+};
+xhr.send();
+
+//----------------------------------------------------2
+
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((res) => res.json())
+  .then((data) => {
+    const list = document.getElementById("company-list");
+    data.forEach((user) => {
+      const li = document.createElement("li");
+      li.textContent = user.company.name;
+      list.appendChild(li);
+    });
+  });
